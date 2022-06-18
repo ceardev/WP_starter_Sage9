@@ -1,0 +1,48 @@
+// Media Queries settings
+// -------------------------
+
+$cell:              	"only screen and (max-width:480px)";
+$mobile:              	"only screen and (max-width:768px)";
+$tabmini:               "only screen and (max-width:960px)";
+$tablet:                "only screen and (max-width:1024px)";
+$laptop:                "only screen and (max-width:1280px)";
+$large:                 "only screen and (max-width:1440px)";
+$desktop:               "only screen and (min-width:1441px)";
+
+// Selectors
+// -------------------------
+$html: html;
+
+// Brand colors
+// -------------------------
+
+$white:			#FFF;
+$black:			#000;
+$grey-dark:		#444;
+$grey:			#979797;
+$grey-light:	#D8D8D8;
+$grey-lighter:	#E9EEEC;
+$green:			#768883;
+$green-dark:	#01B28D;
+$green-dark-2:	#00A280;
+$green-black:	#2A2E2D;
+$beige:			#E9DABF;
+
+// Fonts
+// -------------------------
+$poppins: 'Poppins', sans-serif;
+
+// Transition
+// -------------------------
+
+$time: 		0.35s;
+
+// Sizes
+// -------------------------
+
+$border:	2px;
+
+// Fonts
+// -------------------------
+
+$arial:		'Arial';

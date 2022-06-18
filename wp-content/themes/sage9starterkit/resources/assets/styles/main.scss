@@ -1,0 +1,36 @@
+/** Import everything from autoload */
+@import "./autoload/**/*";
+@import "utils/breakpoint"; //For using bootstrap breakpoints in js
+
+// Fonts
+//@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+// Import styles from node modules
+@import "~bootstrap/scss/mixins";
+@import '~bootstrap/scss/images';
+@import "~bootstrap/scss/utilities";
+@import '~swiper/swiper-bundle.css';
+
+@import "utils/select2.min";
+
+@import "utils/reset";
+@import "utils/fonts";
+@import "utils/mixins";
+@import "utils/easings";
+
+@import "common/variables";
+@import "common/global";
+
+// @import "partials/icons";
+// @import "partials/buttons";
+
+@import "layouts/layout";
+
+@import "components/header";
+@import "components/menu";
+@import "components/footer";
+
+@import "partials/margins";
+
+// MODULES
+@import "blocks/demo_module";

@@ -1,0 +1,229 @@
+/*
+ * Header
+ ****************************************************************/
+.header {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+
+	&.is-open::before {
+    	content: '';
+    	display: block;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	right: 0;
+    	height: 70px;
+    	z-index: 1;
+    }
+
+	@include media-breakpoint-down(md) {
+		padding-top: 30px;
+
+		&__container {
+			max-width: none;
+		}
+	}
+
+	@include media-breakpoint-down(xs) {
+		padding-top: 10px;
+	}
+
+	&__logo {
+		display: inline-block;
+    	position: relative;
+		top: -10px;
+		text-align: center;
+
+		.logo {
+			transition: width 0.5s ease;
+		}
+
+		.home & {
+			@include media-breakpoint-up(lg) {
+				// opacity: 0;
+				transition: opacity 0.6s ease;
+			}
+		}
+
+		.home .is-fixed & {
+			opacity: 1;
+		}
+
+		.is-fixed & .logo {
+			width: 230px;
+			height: auto;
+		}
+
+		// Menu open
+		.is-open & {
+			position: fixed;
+		    top: 30px;
+		    left: 15px;
+		    z-index: 2;
+		}
+
+		@media #{$large} {
+		    top: -6px;
+
+		    .logo {
+		    	max-width: 150px;
+		    	height: auto;
+		    }
+		}
+
+		@include media-breakpoint-down(md) {
+			top: 0;
+		}
+
+		@include media-breakpoint-down(xs) {
+			.is-open & {
+				top: 10px;
+			}
+		}
+	}
+}
+
+.header-top {
+	margin-bottom: 20px;
+	transition: margin-bottom 0.5s ease;
+	text-align: right;
+	
+	@include media-breakpoint-down(xs) {
+
+		 text-align: left !important; 
+		 margin-left: 10%;
+
+	}	
+	&__link {
+		display: inline-block;
+		color: $grey-dark;
+		font-size: 15px;
+		transition: color 0.3s, font-size 0.5s ease;
+
+		&:not(:first-child) {
+			margin-left: 30px;
+		}
+
+		&:hover {
+			color: $green;
+		}
+
+		.notouch &.is-tel {
+			// pointer-events: none;
+			// cursor: default;
+		}
+	}
+
+	.is-fixed & {
+		margin-bottom: 10px;
+
+		&__link {
+			font-size: 13px;
+		}
+	}
+
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 10px;
+
+		&__link {
+			&, .is-fixed & {
+				font-size: 12px;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 0;
+		text-align: center;
+
+		&__link {
+			&, .is-fixed & {
+				display: block;
+				color: $grey-dark;
+				font-size: 18px;
+				font-weight: 500;
+
+				&:not(:first-child) {
+					margin-left: 0;
+				}
+
+				&:not(:last-child) {
+					margin-bottom: 30px;
+				}
+
+				&.is-tel {
+					color: $green;
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-down(xs) {
+		&__link {
+			&, .is-fixed & {
+				font-size: 15px;
+			}
+		}
+	}
+}
+
+// Language
+.wpml-ls-legacy-list-horizontal {
+	display: inline-block;
+	position: relative;
+
+	.wpml-ls-link {
+		color: black;
+		font-size: 15px;
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: $green-dark;
+		}
+
+		@include media-breakpoint-only(lg) {
+			font-size: 13px;
+		}
+
+		@include media-breakpoint-between(sm,md) {
+			font-size: 18px;
+		}
+
+		@include media-breakpoint-down(md) {
+			color: $grey-dark;
+
+			&:hover {
+				color: $green;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		margin-left: 30px;
+	}
+}
+
+/*
+ * Fixed Header
+ ****************************************************************/
+.header {
+	transition: transform 0.6s ease;
+	
+	&.is-fixed {
+		position: fixed;
+		background-color: rgba($white, 0.95);
+	}
+
+	&.is-init {
+		transform: translateY(-100%);
+	}
+
+	&.is-show {
+		transform: translateY(0);
+	}
+}

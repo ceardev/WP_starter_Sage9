@@ -1,0 +1,25 @@
+// Add pseudo element to body to be able to sync breakpoint with JS (scripts/libs/breakpoint.js)
+body::before {
+    content: 'none';
+    display: none; /* Prevent from displaying. */
+
+    @include media-breakpoint-down(xl) {
+        content: 'xl';
+    }
+
+    @include media-breakpoint-down(lg) {
+        content: 'lg';
+    }
+
+    @include media-breakpoint-down(md) {
+        content: 'md';
+    }
+
+    @include media-breakpoint-down(sm) {
+        content: 'sm';
+    }
+
+    @include media-breakpoint-down(xs) {
+        content: 'xs';
+    }
+}

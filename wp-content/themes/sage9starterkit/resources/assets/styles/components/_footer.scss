@@ -1,0 +1,169 @@
+/*
+ * Footer
+ ****************************************************************/
+.footer {
+    float: left;
+    width: 100%;
+	background-color: $green-black;
+	padding-top: 150px;
+	padding-bottom: 50px;
+	overflow: hidden;
+
+	color: white;
+
+	a{
+		text-decoration: none;
+		color: grey;
+	}
+
+	@include media-breakpoint-down(lg) {
+		padding-top: 110px;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding-top: 80px;
+	}
+
+	&__col {
+		margin-bottom: 50px;
+
+		@include media-breakpoint-down(xs) {
+			text-align: center;
+		}
+	}
+
+	&__title {
+		color: $green;
+		font-size: 24px;
+		font-weight: 400;
+		margin-bottom: 25px;
+
+		@include media-breakpoint-down(lg) {
+			font-size: 20px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			font-size: 18px;
+			margin-bottom: 15px;
+		}
+	}
+
+	&__text {
+		color: $white;
+		display: inline-block;
+		font-style: normal;
+
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+
+		@include media-breakpoint-down(lg) {
+			font-size: 15px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			font-size: 13px;
+		}
+	}
+
+	a.footer__text {
+		transition: color 0.3s ease;
+
+		&:hover {
+			color: $green;
+		}
+	}
+
+	&__link {
+		color: $green;
+		transition: color 0.3s ease;
+
+		
+
+		.icon {
+			margin-right: 10px;
+			position: relative;
+			top: -2px;
+		}
+
+
+		svg {
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 10px;
+		    position: relative;
+		    top: -5px;
+
+		    * { 
+		    	transition: fill 0.3s ease; 
+		    }
+		}
+	
+
+		&:hover {
+			color: $white;
+
+			svg * {
+				fill: $white;
+			}
+		}
+
+		@include media-breakpoint-down(lg) {
+			font-size: 15px;
+		}
+
+		@include media-breakpoint-down(md) {
+			svg {
+				width: 33px;
+				height: 21px;
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			font-size: 13px;
+		}
+	}
+
+	&__item {
+		display: inline-block;
+
+		@include media-breakpoint-down(md) {
+			&:not(:first-child) {
+				
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+
+/*
+ * Bottom
+ ****************************************************************/
+.footer {
+	&__bottom {
+		position: relative;
+
+		@include media-breakpoint-up(md) {
+			border-top: 1px solid rgba($green, 0.5);
+			padding-top: 30px;
+		}
+
+		@include media-breakpoint-down(sm) {
+			&::before {
+				content: '';
+				display: block;
+				width: 1000px;
+				height: 1px;
+				background-color: rgba($green, 0.5);
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+}

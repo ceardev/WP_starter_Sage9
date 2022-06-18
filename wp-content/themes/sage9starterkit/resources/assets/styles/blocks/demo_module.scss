@@ -1,0 +1,22 @@
+#demo_module{
+    color: red;
+
+
+    @include media-breakpoint-down(xl) {
+        // >=1200
+    }
+        
+    @include media-breakpoint-down(lg) {
+        // >=960
+    }
+    @include media-breakpoint-down(md) {
+        // >=720
+    }
+    @include media-breakpoint-down(sm) {
+        // >=576
+    }
+    @include media-breakpoint-down(xs) {
+        // <576
+    }
+
+}

@@ -1,0 +1,33 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+
+# heavy content
+wp-content/themes/sage/dist/*
+wp-content/themes/sage/package-lock.json
+wp-content/languages/*
+wp-content/uploads/*
+!wp-content/uploads/.gitkeep
+!wp-content/uploads/download-file.php
+*.zip
+*.tar
+node_modules
+
+composer.lock
+package-lock.json
+
+# logs
+*.log
+debug_log
+error_log
+wflogs
+
+# configs et local
+wp-config.php
+robots.txt
+sitemap.xml
+.bowerrc
+.htaccess
+.DS_Store
+.idea
+
+/wp-content/themes/sage/yarn.lock

@@ -1,0 +1,182 @@
+/*
+ * 0. Smooth fonts
+ ****************************************************************/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+li,
+label,
+strong,
+button,
+input,
+div,
+blockquote,
+small {
+    @include smooth;
+    line-height: 1.3;
+    .firefox & {
+        font-weight: 100;
+	}
+}
+
+
+  @include media-breakpoint-down(xs) {
+    h3 {
+      font-size: 24px !important;
+    }
+    .text{
+      font-size: 16px !important;
+    }
+  }
+
+
+/*
+ * 1. Wrappers
+ ****************************************************************/
+html {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  &.scroll-disabled {
+    overflow: hidden;
+    
+    body {
+        overflow: hidden;
+    }
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  // fixed header
+  &:not(#tinymce):not(.wp-admin) {
+    font-family: $poppins;
+    line-height: 1.3;
+    letter-spacing: 0.04rem;
+    padding-top: 130px;
+    background-size: 100% auto;
+  }
+}
+
+/*
+ * 2. Global style
+ ****************************************************************/
+.reset-font {
+  font-size: 0;
+  line-height: 0;
+}
+
+.dk-only {
+  display: block;
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
+}
+
+.mb-only {
+  display: none;
+
+  @include media-breakpoint-down(sm) {
+    display: block;
+  }
+}
+iframe{
+    max-width: 1000px;
+    width: 100%;
+}
+/*
+ * 3. Grid
+ ****************************************************************/
+.container {
+   
+  @include media-breakpoint-up(xl) {
+    max-width: 1610px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/*
+ * 4. Utils
+ ****************************************************************/
+.is-underline {
+  border-bottom: 1px solid currentColor;
+  transition: border-color 0.3s ease;
+  color: #00A280;
+
+  &:hover {
+    border-color: transparent;
+  }
+}
+
+/*
+ * 5. Animation
+ ****************************************************************/
+html.sr:not(.touch) {
+  .slideUp, .fadeIn {
+    visibility: hidden;
+  }
+
+  .scaleRight {
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $white;
+        transform: scaleX(1);
+        transform-origin: right;
+        transition: transform 0.6s ease-in-out;
+      }
+
+      &.is-visible::after {
+        transform: scaleX(0);
+      }
+    }
+  }
+}
+
+h1, h2, h3{font-familly: "Poppins", sans-serif ;}
+.editor{ 
+    color: #444; 
+    div{line-height: 1.5}
+}
+h1, .editor h1{font-size: 70px;  font-weight: 200; line-height: 70px  }
+h2{font-size: 42px; line-height: 50px; }
+h3{font-size: 24px; }
+/*blockquote:before{
+  content: '\AB';
+    display: block;
+    font-size: 2.6em;
+    font-weight: 200;
+    font-style: normal;
+}*/
+blockquote p {padding: 20px;}
+
+
+
+
+
+
